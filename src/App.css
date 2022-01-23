@@ -3,20 +3,22 @@
   padding: 0;
   box-sizing: content-box;
 }
-/* header */
+/* --- Header --- */
 .logo-bar {
   border-bottom: solid 1px #e9ebeb;
   margin: 10px 0;
 }
 .logo-bar svg {
   height: 41.3px;
-  margin-left: 60px;
+  margin: 0 0 5px 60px;
 }
 
 .restaurantInfo {
   height: 240px;
+  width: 1200px;
+  margin: 30px auto;
   display: flex;
-  margin: 60px 60px 0 60px;
+  justify-content: center;
 }
 
 .restaurantInfo h1 {
@@ -32,12 +34,19 @@
     sans-serif;
   color: #868a8a;
   font-size: 19px;
-  margin: 60px 60px 0 0;
+  margin: 40px 60px 0 0;
 }
 
-header img {
+.restaurantInfo img {
   max-width: fit-content;
   max-height: fit-content;
   margin: 20px 0;
   border-radius: 5px;
+}
+
+/* --- Section liste des menus --- */
+
+section {
+  /* background-color: #00c4c4; */
+  height: 500px;
 }
