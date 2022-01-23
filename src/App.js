@@ -33,7 +33,7 @@ const App = () => {
     <div>
       {/* --- Restaurant Header --- */}
       <header>
-        <div className="logo-bar">
+        <div className="logoPosition">
           <svg
             className="Logo"
             viewBox="0 0 300 80"
@@ -46,6 +46,7 @@ const App = () => {
             ></path>
           </svg>
         </div>
+        <div className="lineUnderLogo"></div>
         <div className="restaurantInfo">
           <div>
             <h1>{restaurants.restaurant.name}</h1>
@@ -63,13 +64,13 @@ const App = () => {
         <div className="mealList">
           {restaurants.categories.map((category, index) => {
             return (
-              <div>
+              <div className="category">
                 <h2 key={index}>{category.name}</h2>
                 <div className="card">
                   {category.meals.map((meal, index) => {
                     return (
                       <div className="menuCard">
-                        <div className="menuDescription">
+                        <div className="menuCardDescription">
                           <h3 key={index}> {meal.title} </h3>
                           <p key={index}>{meal.description.slice(0, 60)} </p>
                           <span key={index}>{meal.price} €</span>
@@ -88,9 +89,11 @@ const App = () => {
             );
           })}
         </div>
-        <div className="validation">
-          <button>valider mon panier</button>
-          <span>Votre panier est vide</span>
+        <div className="leftSection">
+          <div className="basketArea">
+            <button>valider mon panier</button>
+            <p>Votre panier est vide</p>
+          </div>
         </div>
       </section>
     </div>
