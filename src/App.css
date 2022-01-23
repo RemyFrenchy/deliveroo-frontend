@@ -6,7 +6,8 @@
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
-/* --- Header --- */
+/* --- Header / Restaurant --- */
+
 header {
   margin: auto;
 }
@@ -56,28 +57,36 @@ svg {
   border-radius: 5px;
 }
 
-/* --- Section liste des menus --- */
+/* --- MealCategory --- */
+.mealList {
+  flex: 2;
+}
+
+.category {
+  margin: auto;
+  width: 800px;
+}
 
 section {
   background-color: #e9ebeb;
   display: flex;
-  margin: auto;
 }
 
 h2 {
   margin-top: 20px;
   font-weight: 500;
+  margin-left: 20px;
 }
 
 .card {
   display: flex;
-  margin: 20px 0;
+  margin: 20px;
   width: 850px;
   box-sizing: content-box;
-  /* background-color: red; */
   overflow: hidden;
   flex-wrap: wrap;
 }
+/* --- Meal ---  */
 
 .menuCard {
   background-color: white;
@@ -90,55 +99,61 @@ h2 {
   box-sizing: content-box;
   border-radius: 5px;
 }
-
-h3 {
-  font-weight: 300;
-  margin-bottom: 10px;
-}
 .menuCardDescription {
   width: 250px;
   margin-right: 20px;
   font-weight: 100;
 }
 
-.mealList {
-  flex: 2;
-  /* background-color: aqua; */
+h3 {
+  font-weight: 300;
+  margin-bottom: 10px;
 }
-.leftSection {
-  background-color: green;
-  flex: 1;
+
+.menuCard svg {
+  height: 20px;
 }
+
+section img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 5px;
+  position: relative;
+  right: 10px;
+}
+
+.etoile {
+  margin-top: 20px;
+  display: flex;
+}
+
+.etoile strong {
+  color: #ff8000;
+  font-size: 13px;
+  margin-left: 5px;
+  text-align: center;
+}
+
+/* --- Basket Area --- */
 
 .basketArea {
   width: 350px;
   height: 244px;
   background-color: white;
   text-align: center;
-  margin: 30px auto auto auto;
+  margin: 30px;
+  position: sticky;
+  top: 0;
 }
-
 .basketArea p {
   text-align: center;
 }
-.leftSection button {
+.basketArea button {
   background-color: #bac3c3;
   height: 50px;
   width: 300px;
   border: none;
   border-radius: 5px;
   margin-top: 10px;
-}
-
-section img {
-  width: 130px;
-  height: 130px;
-  border-radius: 5px;
-  position: relative;
-  right: 10px;
-}
-
-.category {
-  margin: auto;
-  width: 800px;
 }
