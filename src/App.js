@@ -60,12 +60,25 @@ const App = () => {
 
       {/* --- Liste des menus --- */}
       <section>
-        {isLoading &&
-          restaurants.map((restaurant) => (
-            <div key={restaurant.data.restaurant.categories.id}>
-              {restaurant.restaurant.name}
+        {restaurants.categories.map((category, index) => {
+          return (
+            <div>
+              <h2 key={index}>{category.name}</h2>
+              {category.meals.map((meal, index) => {
+                return (
+                  <div className="menuCard">
+                    <div className="menuCard2">
+                      <h3 key={index}> {meal.title} </h3>
+                      <p key={index}>{meal.description} </p>
+                      <span key={index}>{meal.price}</span>
+                      <span key={index}>{meal.popular && " populaire"}</span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          ))}
+          );
+        })}
       </section>
     </div>
   );
