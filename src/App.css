@@ -4,19 +4,20 @@
   box-sizing: content-box;
 }
 /* --- Header --- */
+
 .logo-bar {
   border-bottom: solid 1px #e9ebeb;
   margin: 10px 0;
 }
 .logo-bar svg {
   height: 41.3px;
-  margin: 0 0 5px 60px;
+  margin: 0 0 5px 0;
 }
 
 .restaurantInfo {
   height: 240px;
   width: 1200px;
-  margin: 30px auto;
+  margin: 30px 0 0;
   display: flex;
   justify-content: center;
 }
@@ -46,7 +47,40 @@
 
 /* --- Section liste des menus --- */
 
+section {
+  background-color: #e9ebeb;
+  display: flex;
+}
+
+.card {
+  display: flex;
+  margin-bottom: 10px;
+  width: 770px;
+  background-color: red;
+  overflow: hidden;
+}
+
 .menuCard {
   background-color: #00c4c4;
-  margin-bottom: 10px;
+  flex-shrink: 0;
+  width: 380px;
+  height: 160px;
+  margin-left: 10px;
+  display: flex;
+}
+.mealList {
+  flex: 2;
+}
+.validation {
+  background-color: green;
+  flex: 1;
+}
+
+section img {
+  width: 130px;
+  height: 130px;
+  border-radius: 10px;
+}
+
+.menuDescription {
 }

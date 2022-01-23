@@ -60,25 +60,38 @@ const App = () => {
 
       {/* --- Liste des menus --- */}
       <section>
-        {restaurants.categories.map((category, index) => {
-          return (
-            <div>
-              <h2 key={index}>{category.name}</h2>
-              {category.meals.map((meal, index) => {
-                return (
-                  <div className="menuCard">
-                    <div className="menuCard2">
-                      <h3 key={index}> {meal.title} </h3>
-                      <p key={index}>{meal.description} </p>
-                      <span key={index}>{meal.price}</span>
-                      <span key={index}>{meal.popular && " populaire"}</span>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })}
+        <div className="mealList">
+          {restaurants.categories.map((category, index) => {
+            return (
+              <div>
+                <h2 key={index}>{category.name}</h2>
+                <div className="card">
+                  {category.meals.map((meal, index) => {
+                    return (
+                      <div className="menuCard">
+                        <div className="menuDescription">
+                          <h3 key={index}> {meal.title} </h3>
+                          <p key={index}>{meal.description.slice(0, 60)} </p>
+                          <span key={index}>{meal.price} €</span>
+                          <span key={index}>
+                            {meal.popular && " populaire"}
+                          </span>
+                        </div>
+                        {meal.picture && (
+                          <img key={index} src={meal.picture} alt="meal" />
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="validation">
+          <button>valider mon panier</button>
+          <span>Votre panier est vide</span>
+        </div>
       </section>
     </div>
   );
