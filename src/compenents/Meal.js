@@ -6,7 +6,7 @@ const Meal = ({ category }) => {
           <div className="menuCard">
             <div className="menuCardDescription">
               <h3 key={index}> {meal.title} </h3>
-              <p key={index}>{meal.description.slice(0, 60)} </p>
+              <p key={index}>{meal.description} </p>
               <div className="etoile">
                 <span key={index}>{meal.price} €</span>
 
