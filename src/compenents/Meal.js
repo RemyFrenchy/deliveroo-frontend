@@ -3,7 +3,12 @@ const Meal = ({ category }) => {
     <div className="card">
       {category.meals.map((meal, index) => {
         return (
-          <div className="menuCard">
+          <div
+            onClick={() => {
+              return alert(meal.title);
+            }}
+            className="menuCard"
+          >
             <div className="menuCardDescription">
               <h3 key={index}> {meal.title} </h3>
               <p key={index}>{meal.description} </p>

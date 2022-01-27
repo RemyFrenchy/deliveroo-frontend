@@ -15,6 +15,7 @@ const App = () => {
   //  ----------------------
   const [restaurants, setRestaurants] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [category, updateCategory] = useState([]);
 
   const fetchData = async () => {
     try {
@@ -42,7 +43,7 @@ const App = () => {
         <MealCategory restaurants={restaurants} />
 
         {/* --- Basket area --- */}
-        <BasketArea />
+        <BasketArea category={category} updateCategory={updateCategory} />
       </section>
     </div>
   );
