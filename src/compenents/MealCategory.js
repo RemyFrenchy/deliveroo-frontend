@@ -1,6 +1,6 @@
 import Meal from "./Meal";
 
-const MealCategory = ({ restaurants }) => {
+const MealCategory = ({ handleClick, restaurants, basket, setBasket }) => {
   return (
     <div className="mealList">
       {restaurants.categories.map((category, index) => {
@@ -9,7 +9,12 @@ const MealCategory = ({ restaurants }) => {
             <h2 key={index}>{category.meals.length !== 0 && category.name}</h2>
 
             {/* --- Meal --- */}
-            <Meal category={category} />
+            <Meal
+              category={category}
+              basket={basket}
+              setBasket={setBasket}
+              handleClick={handleClick}
+            />
           </div>
         );
       })}

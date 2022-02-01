@@ -3,7 +3,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Restaurant from "./compenents/Restaurant";
 import MealCategory from "./compenents/MealCategory";
-import BasketArea from "./compenents/BasketArea";
 
 const App = () => {
   // Mise en place du useEffect
@@ -13,9 +12,10 @@ const App = () => {
   }, []);
 
   //  ----------------------
+
   const [restaurants, setRestaurants] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const [category, updateCategory] = useState([]);
+  const [basket, setBasket] = useState([]);
 
   const fetchData = async () => {
     try {
@@ -40,10 +40,21 @@ const App = () => {
 
       <section>
         {/* --- Liste des menus --- */}
-        <MealCategory restaurants={restaurants} />
+        <MealCategory
+          restaurants={restaurants}
+          basket={basket}
+          setBasket={setBasket}
+        />
 
-        {/* --- Basket area --- */}
-        <BasketArea category={category} updateCategory={updateCategory} />
+        {/* --- Basket --- */}
+
+        <div className="basketArea">
+          <button>Valider mon panier</button>
+
+          {basket.map((meal) => {
+            return <p>{meal.title}</p>;
+          })}
+        </div>
       </section>
     </div>
   );

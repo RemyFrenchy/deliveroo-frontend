@@ -1,16 +1,19 @@
-const Meal = ({ category }) => {
+const Meal = ({ handleClick, category, meal, basket, setBasket }) => {
   return (
     <div className="card">
       {category.meals.map((meal, index) => {
         return (
           <div
             onClick={() => {
-              return alert(meal.title);
+              const newBasket = [...basket];
+              newBasket.push(meal);
+              setBasket(newBasket);
+              console.log(meal);
             }}
             className="menuCard"
           >
             <div className="menuCardDescription">
-              <h3 key={index}> {meal.title} </h3>
+              <h3 key={meal.id}> {meal.title} </h3>
               <p key={index}>{meal.description} </p>
               <div className="etoile">
                 <span key={index}>{meal.price} €</span>
