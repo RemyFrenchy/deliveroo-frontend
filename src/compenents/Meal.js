@@ -1,22 +1,35 @@
-const Meal = ({ handleClick, category, meal, basket, setBasket }) => {
+const Meal = ({
+  counters,
+  setCounters,
+  handleClick,
+  category,
+  meal,
+  basket,
+  setBasket,
+}) => {
   return (
     <div className="card">
-      {category.meals.map((meal, index) => {
+      {category.meals.map((meal, mealIndex) => {
         return (
           <div
+            key={mealIndex}
+            // onClick ajout d'un menu dans le panier
             onClick={() => {
               const newBasket = [...basket];
-              newBasket.push(meal);
+              newBasket.push({
+                title: meal.title,
+                price: meal.price,
+                quantity: 1,
+              });
               setBasket(newBasket);
-              console.log(meal);
             }}
             className="menuCard"
           >
             <div className="menuCardDescription">
-              <h3 key={meal.id}> {meal.title} </h3>
-              <p key={index}>{meal.description} </p>
+              <h3> {meal.title} </h3>
+              <p>{meal.description} </p>
               <div className="etoile">
-                <span key={index}>{meal.price} €</span>
+                <span>{meal.price} €</span>
 
                 {meal.popular && (
                   <svg
@@ -31,7 +44,7 @@ const Meal = ({ handleClick, category, meal, basket, setBasket }) => {
                 <strong>{meal.popular && "Populaire"}</strong>
               </div>
             </div>
-            {meal.picture && <img key={index} src={meal.picture} alt="meal" />}
+            {meal.picture && <img src={meal.picture} alt="meal" />}
           </div>
         );
       })}

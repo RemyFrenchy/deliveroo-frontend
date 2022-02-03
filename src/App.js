@@ -16,6 +16,29 @@ const App = () => {
   const [restaurants, setRestaurants] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [basket, setBasket] = useState([]);
+  const [counter, setCounter] = useState(1);
+
+  const newCounters = () => {
+    return (
+      <div>
+        <button
+          onClick={() => {
+            setCounter(counter - 1);
+          }}
+        >
+          -
+        </button>
+        <span>{counter}</span>
+        <button
+          onClick={() => {
+            setCounter(counter + 1);
+          }}
+        >
+          +
+        </button>
+      </div>
+    );
+  };
 
   const fetchData = async () => {
     try {
@@ -49,10 +72,17 @@ const App = () => {
         {/* --- Basket --- */}
 
         <div className="basketArea">
-          <button>Valider mon panier</button>
+          <button className="valide">Valider mon panier</button>
 
-          {basket.map((meal) => {
-            return <p>{meal.title}</p>;
+          {basket.map((meal, index) => {
+            return (
+              <div key={index}>
+                <span style={{ display: counter === 0 ? "none" : "inline" }}>
+                  {newCounters()}
+                  {meal.title} {meal.price}€ {meal.quantity}
+                </span>
+              </div>
+            );
           })}
         </div>
       </section>

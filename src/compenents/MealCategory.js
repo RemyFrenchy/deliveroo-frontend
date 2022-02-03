@@ -5,7 +5,7 @@ const MealCategory = ({ handleClick, restaurants, basket, setBasket }) => {
     <div className="mealList">
       {restaurants.categories.map((category, index) => {
         return (
-          <div className="category">
+          <div key={index} className="category">
             <h2 key={index}>{category.meals.length !== 0 && category.name}</h2>
 
             {/* --- Meal --- */}

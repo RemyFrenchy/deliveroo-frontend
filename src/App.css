@@ -98,6 +98,7 @@ h2 {
   display: flex;
   box-sizing: content-box;
   border-radius: 5px;
+  cursor: pointer;
 }
 .menuCardDescription {
   width: 250px;
@@ -127,6 +128,7 @@ section img {
   border-radius: 5px;
   position: relative;
   right: 10px;
+  top: 5px;
 }
 
 .etoile {
@@ -151,11 +153,12 @@ section img {
   margin: 30px;
   position: sticky;
   top: 0;
+  cursor: pointer;
 }
 .basketArea p {
   text-align: center;
 }
-.basketArea button {
+.valide {
   background-color: #bac3c3;
   height: 50px;
   width: 300px;
